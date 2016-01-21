@@ -36,34 +36,6 @@
 
 <table width="75%" class="ruleTable indent">
 
-    <tr><td class="ruleTableHeader"><fmt:message key="help.premium.title"/></td>
-        <td class="ruleTableCell">
-            <c:choose>
-                <c:when test="${model.licenseInfo.licenseValid}">
-                    <c:choose>
-                        <c:when test="${model.user.settingsRole}">
-                            <a href="premiumSettings.view">Subsonic Premium</a>
-                        </c:when>
-                        <c:otherwise>
-                            Subsonic Premium
-                        </c:otherwise>
-                    </c:choose>
-                    <c:if test="${not empty model.licenseInfo.licenseExpires}">
-                        <fmt:message key="help.premium.expires">
-                            <fmt:param><fmt:formatDate type="date" dateStyle="long" value="${model.licenseInfo.licenseExpires}"/></fmt:param>
-                        </fmt:message>
-                    </c:if>
-                </c:when>
-                <c:otherwise>
-                    <fmt:message key="help.premium.upgrade"/>
-                    <c:if test="${not empty model.licenseInfo.licenseExpires}">
-                        <fmt:message key="help.premium.expired">
-                            <fmt:param><fmt:formatDate type="date" dateStyle="long" value="${model.licenseInfo.licenseExpires}"/></fmt:param>
-                        </fmt:message>
-                    </c:if>
-                </c:otherwise>
-            </c:choose>
-        </td></tr>
     <tr><td class="ruleTableHeader"><fmt:message key="help.version.title"/></td><td class="ruleTableCell">${versionString} &ndash; ${buildDateString}</td></tr>
     <tr><td class="ruleTableHeader"><fmt:message key="help.server.title"/></td><td class="ruleTableCell">${model.serverInfo} (<sub:formatBytes bytes="${model.usedMemory}"/> / <sub:formatBytes bytes="${model.totalMemory}"/>)</td></tr>
     <tr><td class="ruleTableHeader"><fmt:message key="help.license.title"/></td><td class="ruleTableCell">
