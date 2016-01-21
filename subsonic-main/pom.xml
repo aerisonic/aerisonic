@@ -372,6 +372,7 @@
 		<configuration>
 		    <doCheck>true</doCheck>
 		    <doUpdate>false</doUpdate>
+		    <scmDirectory>${project.parent.basedir}</scmDirectory>
 		</configuration>
 	    </plugin>
             <plugin>
